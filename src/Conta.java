@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public abstract class Conta implements IConta{
     
@@ -8,7 +9,6 @@ public abstract class Conta implements IConta{
     protected int numero;   
     protected double saldo;
     protected Cliente cliente;
-
 
     public Conta(Cliente cliente) {
         this.agencia = Conta.AGENCIA_PADRAO;
@@ -47,6 +47,22 @@ public abstract class Conta implements IConta{
         System.out.println(String.format("Agencia: %s", this.agencia));
         System.out.println(String.format("Numero: %d", this.numero));
         System.out.println(String.format("Saldo: %.2f", this.saldo));
+    }
+
+    public void criarConta() {
+        try (Scanner entrada = new Scanner(System.in)) {
+            System.out.println("Digite 1 para criar uma conta corrente, ou 2 para conta poupança:");
+            int escolha = entrada.nextInt();
+            if(escolha == 1) {
+            Conta corrente = new ContaCorrente(cliente);
+            }else if(escolha == 2){
+            Conta poupanca = new ContaPoupanca(cliente);
+            }else{
+            throw new ParametrosInvalidosException();
+            }
+        } catch (ParametrosInvalidosException exception) {
+            System.out.println("Escolha uma opção válida.");
+        }
     }
     
 }
