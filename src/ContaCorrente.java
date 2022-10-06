@@ -1,7 +1,10 @@
 public class ContaCorrente extends Conta {
 
+    public ContaCorrente(Conta corrente) {
+        super(corrente);
+    }
+
     public ContaCorrente(Cliente cliente) {
-        super(cliente);
     }
 
     @Override
