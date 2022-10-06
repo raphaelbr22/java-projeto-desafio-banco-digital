@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws ParametrosInvalidosException {
+    public static void main(String[] args) {
         Scanner opcao = new Scanner(System.in);
         System.out.println("Bem vindo ao Alra Bank!");
         System.out.println("Já é nosso cliente? Digite 1 para entrar na sua conta.");
@@ -11,23 +11,12 @@ public class Main {
                 
         if(escolha == 2){
             Cliente.cadastroCliente();
-            criarConta();
+            Conta.criarConta();
         }else if(escolha == 1){
             loginCliente();
         }
     }    
     private static void loginCliente() {
-    }
-
-    public static void criarConta(Cliente cliente) {
-        Scanner entrada = new Scanner(System.in);
-        System.out.println("Digite 1 para criar uma conta corrente, ou 2 para conta poupança:");
-        int escolha = entrada.nextInt();
-        if(escolha == 1) {
-            Conta corrente = new ContaCorrente(cliente);
-        }else if(escolha == 2){
-            Conta poupanca = new ContaPoupanca(cliente);
-        }
     }
 }
 

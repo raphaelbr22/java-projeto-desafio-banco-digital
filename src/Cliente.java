@@ -35,7 +35,9 @@ public class Cliente {
         System.out.println("Digite seu nome: ");
         cliente.setNome(entrada.nextLine()); 
         System.out.println("Digite seu CPF: ");
-        cliente.setCpf(entrada.nextLine()); 
+        cliente.setCpf(entrada.nextLine());
+        System.out.println("Digite uma senha de 6 dígitos numéricos: ");
+        cliente.setSenha(entrada.nextLine());
         System.out.println("Ótimo! Agora vamos escolher uma conta para você.");
     }
 
