@@ -139,6 +139,7 @@ public class Interacao {
                     break;
                 default:
                     System.out.println("Opção inválida!");
+                    break;
             }
         } while (opt != 0);
     }
