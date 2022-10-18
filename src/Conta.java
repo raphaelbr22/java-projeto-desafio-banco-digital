@@ -48,7 +48,7 @@ public abstract class Conta implements IConta{
         System.out.println(String.format("Saldo: %.2f", this.saldo));
     } 
 
-    protected static void criarConta() {
+    protected static void criarConta(Cliente cliente) {
         Scanner entrada = new Scanner(System.in);
         System.out.println("Digite 1 para criar uma conta corrente, ou 2 para conta poupança:");
         int escolha = entrada.nextInt();
